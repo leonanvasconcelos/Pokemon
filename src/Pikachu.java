@@ -1,5 +1,5 @@
 
-public class Pikachu extends Pokemon {
+public class Pikachu extends TipoEletrico {
 	public Pikachu() {
 		vida = 65;
 		nome = "Pikachu";

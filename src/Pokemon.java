@@ -1,8 +1,8 @@
 //TODO implementar defesa, evasao, vantagem elemental, novos poderes e quantidade de usos da habilidade.
 public class Pokemon {
-	protected int vida;
+	protected int vida, defesa, evasao;
 	protected boolean vivo;
-	protected String nome;
+	protected String nome, tipo;
 	protected Habilidades habilidadeUm, habilidadeDois, habilidadeTres, habilidadeQuatro, habilidadeCinco;
 
 	public Pokemon() {

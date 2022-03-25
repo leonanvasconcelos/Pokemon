@@ -1,5 +1,5 @@
 
-public class Squirtle extends Pokemon {
+public class Squirtle extends TipoAgua {
 	public Squirtle() {
 		vida = 75;
 		nome = "Squirtle";

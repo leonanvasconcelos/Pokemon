@@ -1,5 +1,5 @@
 
-public class Charmander extends Pokemon {
+public class Charmander extends TipoFogo {
 	public Charmander() {
 		vida = 70;
 		nome = "Charmander";

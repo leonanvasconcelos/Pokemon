@@ -1,5 +1,5 @@
 
-public class Bulbassauro extends Pokemon {
+public class Bulbassauro extends TipoGrama {
 	public Bulbassauro() {
 		vida = 80;
 		nome = "Bulbassauro";
