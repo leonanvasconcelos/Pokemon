@@ -1,8 +1,11 @@
-
 public class Batalha {
 	public static void main(String args[]) {
-		Pokemon pokemon1 = new Bulbassauro();
+		Pokemon pokemon1 = new Pikachu();
 		Pokemon pokemon2 = new Squirtle();
+		
+		System.out.println(pokemon1.tipo);
+		System.out.println(pokemon2.tipo);
+		System.out.println(pokemon1.vida);
 
 		while (pokemon1.isVivo() && pokemon2.isVivo()) {
 			pokemon1.usarHabilidadeUm(pokemon2);

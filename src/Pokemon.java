@@ -1,6 +1,6 @@
 //TODO implementar defesa, evasao, vantagem elemental, novos poderes e quantidade de usos da habilidade.
 public class Pokemon {
-	protected int vida, defesa, evasao;
+	protected float vida, defesa, evasao;
 	protected boolean vivo;
 	protected String nome, tipo;
 	protected Habilidades habilidadeUm, habilidadeDois, habilidadeTres, habilidadeQuatro, habilidadeCinco;
@@ -13,13 +13,21 @@ public class Pokemon {
 		return vivo;
 	}
 
-	public void receberDano(int dano) {
-		if (vida > 0) {
-			vida = vida - dano;
+	public void receberDano(float dano, boolean desvantagemElemental) {
+		if (desvantagemElemental) {
+			dano = dano / 2;
 			System.out.println(nome + " recebeu " + dano + " de dano.");
+			System.out.println("Não é muito efetivo...");
 		} else {
-			System.out.println("O Pokémon " + nome + " recebeu " + dano + " de dano e morreu.");
+			System.out.println(nome + " recebeu " + dano + " de dano.");
+		}
+		vida = vida - dano;
+		if (vida <= 0) {
+			System.out.println(nome + " morreu.");
 			vivo = false;
+		} else
+		{
+			System.out.println("");
 		}
 	}
 

@@ -1,8 +1,17 @@
 
 public class Habilidades {
-	protected int dano;
+	protected float dano;
+	protected String elemento;
+	
+	public boolean vantagemElemental(String elementoAlvo) {
+		return true;
+	}
+	
+	public boolean desvantagemElemental(String elementoAlvo) {
+		return true;
+	}
 
-	public int executar() {
+	public float executar(String elementoAlvo) {
 		System.out.println("Eu não faço nada");
 		return dano;
 	}

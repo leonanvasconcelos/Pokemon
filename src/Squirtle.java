@@ -8,6 +8,6 @@ public class Squirtle extends TipoAgua {
 
 	public void usarHabilidadeUm(Pokemon alvo) {
 		System.out.print(nome + ": ");
-		alvo.receberDano(habilidadeUm.executar());
+		alvo.receberDano(habilidadeUm.executar(alvo.tipo), habilidadeUm.desvantagemElemental(alvo.tipo));
 	}
 }
