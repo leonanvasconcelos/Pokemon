@@ -13,20 +13,27 @@ public class Pokemon {
 		return vivo;
 	}
 
-	public void receberDano(float dano, boolean desvantagemElemental) {
+	public void receberDano(float dano, boolean desvantagemElemental, boolean vantagemElemental) {
 		if (desvantagemElemental) {
 			dano = dano / 2;
 			System.out.println("Não é muito efetivo...");
 			System.out.println(nome + " recebeu " + dano + " de dano.");
-		} else {
-			System.out.println(nome + " recebeu " + dano + " de dano.");
-		}
-		vida = vida - dano;
-		if (vida <= 0) {
-			System.out.println(nome + " morreu.");
-			vivo = false;
-		} else {
 			System.out.println("");
+		} else {
+			if (vantagemElemental) {
+				System.out.println("É extremamente efetivo!");
+				System.out.println(nome + " recebeu " + dano + " de dano.");
+				dano = (float) (dano * 1.3);
+			} else {
+				System.out.println(nome + " recebeu " + dano + " de dano.");
+			}
+			vida = vida - dano;
+			if (vida <= 0) {
+				System.out.println(nome + " morreu.");
+				vivo = false;
+			} else {
+				System.out.println("");
+			}
 		}
 	}
 
