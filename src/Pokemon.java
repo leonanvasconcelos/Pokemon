@@ -16,8 +16,8 @@ public class Pokemon {
 	public void receberDano(float dano, boolean desvantagemElemental) {
 		if (desvantagemElemental) {
 			dano = dano / 2;
-			System.out.println(nome + " recebeu " + dano + " de dano.");
 			System.out.println("Não é muito efetivo...");
+			System.out.println(nome + " recebeu " + dano + " de dano.");
 		} else {
 			System.out.println(nome + " recebeu " + dano + " de dano.");
 		}
@@ -25,8 +25,7 @@ public class Pokemon {
 		if (vida <= 0) {
 			System.out.println(nome + " morreu.");
 			vivo = false;
-		} else
-		{
+		} else {
 			System.out.println("");
 		}
 	}
