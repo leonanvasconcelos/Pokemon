@@ -1,59 +1,34 @@
-//TODO implementar defesa, evasao, vantagem elemental, novos poderes e quantidade de usos da habilidade.
-public class Pokemon {
-	protected float vida, defesa, evasao;
-	protected boolean vivo;
-	protected String nome, tipo;
-	protected Habilidades habilidadeUm, habilidadeDois, habilidadeTres, habilidadeQuatro, habilidadeCinco;
+import java.util.List;
 
-	public Pokemon() {
-		vivo = true;
+public abstract class Pokemon {
+	protected StatusCondition currentStatusCondition;
+	protected PokemonStats stats;
+	protected List<Move> moves;
+	protected List<Types> type;
+	protected Integer level;
+
+	public Pokemon(){
+		clearStatus();
+		initializeStats();
+		initializeMoves();
+		defineType();
+		initializeLevel();
 	}
 
-	public boolean isVivo() {
-		return vivo;
+  protected void initializeLevel() {
+		this.level = 5;
+	}
+	
+	protected abstract void defineType();
+
+	protected abstract void initializeMoves();
+
+	protected abstract void initializeStats();
+
+	protected void clearStatus() {
 	}
 
-	public void receberDano(float dano, boolean desvantagemElemental, boolean vantagemElemental) {
-		if (desvantagemElemental) {
-			dano = dano / 2;
-			System.out.println("Não é muito efetivo...");
-			System.out.println(nome + " recebeu " + dano + " de dano.");
-			System.out.println("");
-		} else {
-			if (vantagemElemental) {
-				System.out.println("É extremamente efetivo!");
-				System.out.println(nome + " recebeu " + dano + " de dano.");
-				dano = (float) (dano * 1.3);
-			} else {
-				System.out.println(nome + " recebeu " + dano + " de dano.");
-			}
-			vida = vida - dano;
-			if (vida <= 0) {
-				System.out.println(nome + " morreu.");
-				vivo = false;
-			} else {
-				System.out.println("");
-			}
-		}
-	}
-
-	public void usarHabilidadeUm(Pokemon alvo) {
-		System.out.println("Eu não faço nada.");
-	}
-
-	public void usarHabilidadeDois(Pokemon alvo) {
-		System.out.println("Eu não faço nada.");
-	}
-
-	public void usarHabilidadeTres(Pokemon alvo) {
-		System.out.println("Eu não faço nada.");
-	}
-
-	public void usarHabilidadeQuatro(Pokemon alvo) {
-		System.out.println("Eu não faço nada.");
-	}
-
-	public void usarHabilidadeCinco(Pokemon alvo) {
-		System.out.println("Eu não faço nada.");
-	}
+	public List<Types> getTypes() {
+    return type;
+  }
 }
