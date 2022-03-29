@@ -5,7 +5,7 @@ public abstract class Pokemon {
 	protected PokemonStats stats;
 	protected List<Move> moves;
 	protected List<Types> type;
-	protected Integer level;
+	protected LevelSystem level;
 
 	public Pokemon(){
 		clearStatus();
@@ -16,7 +16,7 @@ public abstract class Pokemon {
 	}
 
   protected void initializeLevel() {
-		this.level = 5;
+		this.level = new LevelSystem(5);
 	}
 	
 	protected abstract void defineType();
@@ -26,9 +26,13 @@ public abstract class Pokemon {
 	protected abstract void initializeStats();
 
 	protected void clearStatus() {
+		this.currentStatusCondition = new Fine();;
 	}
 
 	public List<Types> getTypes() {
     return type;
   }
+
+	public abstract void evolve(Pokemon evolution);
+	
 }
